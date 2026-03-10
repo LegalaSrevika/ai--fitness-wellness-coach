@@ -1,0 +1,6 @@
+age,gender,height,weight,activity_level,goal,recommended_exercise,food_plan,calories_target
+22,male,175,70,moderate,maintain,Mixed Cardio,Balanced Diet,2400
+35,female,160,85,light,lose,Yoga,Low Carb,1800
+28,male,180,60,active,gain,Strength Training,High Protein,3000
+45,female,165,70,light,maintain,Brisk Walking,Balanced Diet,2200
+30,male,170,90,sedentary,lose,HIIT,Low Carb,2000

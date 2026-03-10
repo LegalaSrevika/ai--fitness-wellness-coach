@@ -1,0 +1,402 @@
+:root {
+  --bg: #f2f6fb;
+  --card: #ffffff;
+  --text: #152033;
+  --muted: #516079;
+  --border: #d4deea;
+  --primary: #0b66c3;
+  --primary-deep: #084f97;
+  --danger: #b42318;
+  --ok: #0f8c4a;
+  --accent: #ffb347;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at 10% 10%, #edf4ff 0%, #f4f7fb 50%, #eef5ff 100%);
+}
+
+.page {
+  min-height: 100vh;
+  padding: 26px;
+}
+
+.card {
+  max-width: 1040px;
+  margin: 0 auto;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 14px 40px rgba(11, 32, 56, 0.09);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.7rem;
+}
+
+.badge {
+  font-size: 0.82rem;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  text-transform: capitalize;
+}
+
+.badge.online {
+  background: #e9f9ef;
+  color: var(--ok);
+}
+
+.badge.offline {
+  background: #fff0ee;
+  color: var(--danger);
+}
+
+.badge.checking {
+  background: #eef4ff;
+  color: var(--primary);
+}
+
+.hero {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 18px;
+  border: 1px solid var(--border);
+  min-height: 220px;
+}
+
+.hero img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(11, 30, 52, 0.85) 0%,
+    rgba(11, 30, 52, 0.55) 45%,
+    rgba(11, 30, 52, 0.2) 100%
+  );
+  color: #fff;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.hero-overlay h2 {
+  margin: 0 0 6px;
+  font-size: 1.5rem;
+}
+
+.hero-overlay p {
+  margin: 0;
+  max-width: 580px;
+  color: #dfe9f6;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+}
+
+label {
+  font-size: 0.9rem;
+  color: var(--muted);
+  display: grid;
+  gap: 6px;
+}
+
+input,
+select,
+button {
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  padding: 10px;
+  font-size: 0.95rem;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid rgba(11, 102, 195, 0.3);
+  border-color: var(--primary);
+}
+
+button {
+  grid-column: 1 / -1;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--primary-deep) 100%);
+  color: white;
+  border: none;
+  font-weight: 600;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button:hover {
+  cursor: pointer;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(8, 79, 151, 0.25);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.error {
+  color: var(--danger);
+  margin: 14px 0 0;
+  background: #fff0ee;
+  border: 1px solid #ffd8d2;
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.results {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--border);
+}
+
+.results h2,
+.results h3 {
+  margin-bottom: 8px;
+}
+
+.results p {
+  margin: 6px 0;
+  line-height: 1.4;
+}
+
+.report-date {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.print-actions {
+  display: flex;
+  gap: 10px;
+  margin: 8px 0 14px;
+}
+
+.print-actions button {
+  width: auto;
+  min-width: 160px;
+}
+
+.bmi-chart {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px;
+  background: #f9fbff;
+  margin-bottom: 12px;
+}
+
+.bmi-scale {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 42px;
+}
+
+.bmi-segment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.bmi-segment.underweight {
+  background: #b3e5fc;
+  color: #044f70;
+}
+
+.bmi-segment.normal {
+  background: #d6f5d6;
+  color: #1e6d1e;
+}
+
+.bmi-segment.overweight {
+  background: #ffe3b5;
+  color: #955d00;
+}
+
+.bmi-segment.obese {
+  background: #ffccd1;
+  color: #8f1022;
+}
+
+.bmi-marker {
+  position: absolute;
+  top: -2px;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 46px;
+  border-radius: 6px;
+  background: #152033;
+  box-shadow: 0 0 0 2px #fff;
+}
+
+.bmi-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.key-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.metric-card {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px;
+  background: #f9fbff;
+}
+
+.metric-card:hover {
+  cursor: pointer;
+}
+
+.metric-accent {
+  border-color: #ffd190;
+  background: linear-gradient(180deg, #fff8ea 0%, #fff3dc 100%);
+}
+
+.metric-card h3 {
+  margin: 0 0 8px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.metric-card strong {
+  font-size: 1rem;
+  color: var(--text);
+}
+
+.highlights-list {
+  border: 1px solid #ffe6bf;
+  background: #fff8ec;
+  border-radius: 10px;
+  padding: 10px 10px 10px 24px;
+}
+
+.highlights-list li {
+  margin: 6px 0;
+  font-weight: 600;
+  color: #8a4a00;
+}
+
+.results ul {
+  margin: 8px 0 0;
+  padding-left: 18px;
+}
+
+.image-strip {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 10px;
+}
+
+.image-tile {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  min-height: 140px;
+}
+
+.image-tile:hover {
+  cursor: pointer;
+}
+
+.image-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.image-tile span {
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  background: rgba(11, 30, 52, 0.78);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+}
+
+@media print {
+  .hero,
+  .image-strip,
+  .no-print,
+  form,
+  .header .badge {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+  }
+
+  .page,
+  .card,
+  .results {
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 14px;
+  }
+
+  .card {
+    padding: 14px;
+  }
+
+  .hero img {
+    height: 220px;
+  }
+
+  .hero-overlay h2 {
+    font-size: 1.2rem;
+  }
+}

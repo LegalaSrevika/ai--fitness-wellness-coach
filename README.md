@@ -1,1 +1,1 @@
-Backend: run `pip install -r requirements.txt`, `python train_model.py`, then `python app.py`.
+Frontend: run `npm install` and `npm start` in this folder.
